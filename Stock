@@ -1,0 +1,36 @@
+public class Stock {
+
+	String name;
+	String symbol;
+	double previousClosingPrice;
+	double currentPrice;
+	
+	
+	public Stock (String name, String symbol) {
+		this.name = name;
+		this.symbol = symbol;
+	}
+	
+
+	public Stock (double currentPrice,double previousClosingPrice, String name, String symbol) {
+		this.currentPrice= currentPrice;
+		this.previousClosingPrice = previousClosingPrice;
+		this.name = name;
+		this.symbol = symbol;
+	}
+	
+	public double getChangePercent() {
+		return ((currentPrice - previousClosingPrice)/previousClosingPrice) * 100;
+	}
+}
+ class TestStock {
+
+	public static void main(String[] args) {
+
+		Stock s1 = new Stock(49.5,39.5, "Arianit","A");
+		double  l = s1.getChangePercent();
+		System.out.println(l);
+
+	}
+
+}
