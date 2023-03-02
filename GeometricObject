@@ -1,0 +1,114 @@
+public class GeometricObject {
+
+	String color;
+	boolean filled;
+	java.util.Date dateCreated;
+	
+	public GeometricObject() {
+		dateCreated = new java.util.Date();
+	}
+	
+	public GeometricObject(String color, boolean filled) {
+		this.color = color;
+		this.filled = filled;
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+	public boolean isFilled() {
+		return filled;
+	}
+	
+	public void setFilled(boolean filled) {
+		this.filled = filled;
+	}
+	
+	public java.util.Date getDateCalendar(){
+		
+		return dateCreated;
+	}
+	
+	public String toString() {
+		return "created on " + dateCreated + "\ncolor: " + color +
+				 " and filled: " + filled;
+		
+	}	
+}
+ class Circle extends GeometricObject{
+	
+	private double radius;
+	
+	public Circle() {
+		
+	}
+    public Circle(double radius) {
+		this.radius = radius;
+	}
+
+    public Circle(double radius,String color, boolean filled) {
+          this.radius = radius;
+          setColor(color);
+          setFilled(filled);
+
+    }
+    
+    public double getRadius() {
+    	return radius;
+    }
+    
+    public void setRadius(double radius) {
+    	this.radius = radius;
+    }
+    
+    public double getArea() {
+    	return 3.14 * radius * radius;
+    }
+	
+    public double getPerimeter() {
+    	return 2 * 3.14 * radius;
+    }
+    
+    public double getDiameter() {
+    	return 2 * radius;
+    }
+    
+    public void printCircle() {
+    	System.out.println("Circle with radius "+radius+" has area "+getArea());
+    }
+	
+
+}
+
+class Rectangle {
+
+	double width = 1.0;
+	double height = 1.0;
+	
+	public Rectangle() {
+		
+	}
+ 
+ class TestCircle {
+
+	public static void main(String[] args) {
+		
+		Circle c1 =  new Circle(2);
+		System.out.println("A circle " + c1.toString());
+		System.out.println("The color is " + c1.getColor());
+		System.out.println("The radius is " + c1.getRadius());
+		System.out.println("The area is " + c1.getArea());
+		System.out.println("The diameter is " + c1.getDiameter());
+		c1.setColor("blue");
+		c1.setFilled(true);
+		System.out.println("A circle " + c1.toString());
+
+	}
+
+}
+
