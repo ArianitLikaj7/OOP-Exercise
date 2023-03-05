@@ -1,2 +1,2 @@
 # OOP-Exercise
-There are some simple OOP exercise
+There are some OOP exercise
